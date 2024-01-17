@@ -1,7 +1,5 @@
-
 import streamlit as st
 from streamlit_option_menu import option_menu
-
 from streamlit_lottie import st_lottie
 
 
@@ -19,10 +17,21 @@ front_col1, front_col2 = st.columns([1,2])
 with front_col1:
     st.image("images/tobias.png", use_column_width="auto")
 
+    # Path to your file
+    file_path = 'files/Tobias_CV_31_Dec.pdf'
+
+    # Read the file in binary mode
+    with open(file_path, "rb") as file:
+        btn = st.download_button(
+                label="📄 Download CV",
+                data=file,
+                file_name="Tobias_Madsen_CV.pdf",
+                mime="application/octet-stream")
+
 with front_col2:
     st.title("👋 Hi, I'm Tobias!")
     st.subheader("Student and Data Science Enthusiast")
-    st.markdown("I am a student at Copenhagen Business School (CBS) and I am currently studying my bachelor's degree in Business Administration and Digital Management. I am passionate about data science and I am always looking for new opportunities to learn more about the field.")
+    st.markdown("I am a student at Copenhagen Business School (CBS) and I am currently studying my bachelor's degree in Business Administration and Digital Management. I am passionate about data science and I am currently looking for a student job in the field. I am a curious person and I am not afraid to take on new challenges")
 
 selected = option_menu(
     menu_title= None, 
@@ -31,9 +40,8 @@ selected = option_menu(
 
 
 if selected == "About me":
-    #st.header("Experience")
-
     st.header("Work Experience")
+
     work_col1, work_col2 = st.columns([3,1])
 
     with work_col1:
@@ -128,6 +136,7 @@ if selected == "Projects":
             st.subheader("📑 PDF to Content App")
             st.markdown("*This application allows users to upload a PDF file and then automatically get a Summary, 5 Question Multiple Choice Quiz and 10 Flashcards to study the uploaded content in different ways.*")
             st.markdown("The application was created to quickly start testing basic functionalities of a product idea two colleagues had")
+            st.markdown("It made it possible to quickly obtain feedback and at the same time raised new questions about how to process user's content in a cost-effective and user-friendly way.")
             st.markdown("**Tools Used:** Python, Langchain, Streamlit")
             st.markdown("[Link to the project](https://pdf-to-content.streamlit.app)")
 
@@ -136,6 +145,11 @@ if selected == "Projects":
                       speed=0.5,
                       height=300,
                       width=200)
+            
+        with st.expander("🎥 Watch Demo", expanded=False):
+            video_file = open('videos/pdf_to_content_demo.mp4', 'rb')
+            video_bytes = video_file.read()
+            st.video(video_bytes)
 
     st.write("---") 
     
@@ -159,7 +173,63 @@ if selected == "Projects":
                       width=200)
 
 if selected == "Contact me":
-    st.header("Feel free to reach out!")
+    st.header("Let's connect!")
+
+    # Define your GitHub and LinkedIn URLs
+    github_url = "https://github.com/myokom"
+    linkedin_url = "https://www.linkedin.com/in/tob1asmadsen/"
+
+    github_logo = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+    linkedin_logo = "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
+
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(f'''
+            <a href="{github_url}" target="_blank">
+                <button style="
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 15px;  
+                    background-color: #333;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    font-size: 16px;
+                    font-weight: bold;
+                    justify-content: center;
+                ">
+                    <img src="{github_logo}" style="height: 24px; width: 24px; margin-right: 10px; vertical-align: middle;"> 
+                    GitHub
+                </button>
+            </a>''', unsafe_allow_html=True)
+
+    with col2:
+        st.markdown(f'''
+            <a href="{linkedin_url}" target="_blank">
+                <button style="
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 15px;
+                    background-color: #0077b5;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                    transition: 0.3s;
+                    font-size: 16px;
+                    font-weight: bold;
+                    justify-content: center;
+                ">
+                    <img src="{linkedin_logo}" style="height: 24px; width: 24px; margin-right: 10px; vertical-align: middle;"> 
+                    LinkedIn
+                </button>
+            </a>''', unsafe_allow_html=True)
+
+
+#    st.header("Feel free to reach out!")
 
     contact_form = """
     <form action="https://formsubmit.co/681bca75dace6a46b3be10dc2cfc009f" method="POST">
