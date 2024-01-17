@@ -147,7 +147,7 @@ if selected == "Projects":
                       width=200)
             
         with st.expander("🎥 Watch Demo", expanded=False):
-            video_file = open('videos/pdf_to_content_demo.mp4', 'rb')
+            video_file = open('videos/PDF_to_content_demo.mp4', 'rb')
             video_bytes = video_file.read()
             st.video(video_bytes)
 
