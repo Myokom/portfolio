@@ -165,10 +165,11 @@ if selected == "Projects":
         with col7: 
             # Project AI Journalist Assistant
             st.subheader("🖋️ AI Journalist Assistant")
-            st.markdown("*AI Journalist Assistant is an innovative tool designed to assist content creators by automating the drafting process of articles. The application enables users to input their notes or upload a file, and using an OpenAI API, it generates a well-structured article.*")
+            st.markdown("*AI Journalist Assistant is a practical tool designed to assist content creators by automating the drafting process of articles. The application enables users to input their notes or upload a file, and using the OpenAI API, it generates a well-structured article.*")
             st.markdown("Developed to enhance productivity, this application provides options for title style, tone, and formatting to tailor content to specific audiences or publications.")
             st.markdown("The project streamlines the content creation workflow, offering features like downloading the article in a Word document and a text-to-speech function for auditory content review.")
-            st.markdown("**Tools Used:** Python, OpenAI API, Streamlit")
+            st.markdown("*How could this be further developed?* If the application could be integrated with a CMS, it would be possible to automate the entire process of drafting, editing, and publishing articles. The text-to-speech function could be improved to include different languages and accents by using more advanced AI models.")
+            st.markdown("**Tools Used:** Python, OpenAI API, Streamlit, gTTS")
             st.markdown("[Link to the project](https://ai-journalist.streamlit.app)")
 
         with col8:
@@ -176,7 +177,7 @@ if selected == "Projects":
                       speed=0.8)
             
         with st.expander("🎥 Watch Demo", expanded=False):
-            video_file = open('videos/PDF_to_content_demo.mp4', 'rb')
+            video_file = open('videos/AI_Journalist_Demo.mp4', 'rb')
             video_bytes = video_file.read()
             st.video(video_bytes)
 
