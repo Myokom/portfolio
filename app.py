@@ -13,30 +13,35 @@ st.set_page_config(
     })
 
 
-front_col1, front_col2 = st.columns([1,2])
-with front_col1:
-    st.image("images/tobias.png", use_column_width="auto")
+#front_col1, front_col2 = st.columns([1,2])
+# with front_col1:
+#     st.image("images/tobias.png", use_column_width="auto")
+# 
+#     # Path to your file
+#     file_path = 'files/Tobias_CV_31_Dec.pdf'
+# 
+#     # Read the file in binary mode
+#     with open(file_path, "rb") as file:
+#         btn = st.download_button(
+#                 label="📄 Download CV",
+#                 data=file,
+#                 file_name="Tobias_Madsen_CV.pdf",
+#                 mime="application/octet-stream")
+#
+#with front_col2:
+#    st.title("👋 Hi, I'm Tobias!")
+#    st.subheader("Student and Data Science Enthusiast")
+#    st.markdown("I am a student at Copenhagen Business School (CBS) and I am currently studying my bachelor's degree in Business Administration and Digital Management. I am passionate about data science and I am currently looking for a student job in the field. I am a curious person and I am not afraid to take on new challenges")
 
-    # Path to your file
-    file_path = 'files/Tobias_CV_31_Dec.pdf'
 
-    # Read the file in binary mode
-    with open(file_path, "rb") as file:
-        btn = st.download_button(
-                label="📄 Download CV",
-                data=file,
-                file_name="Tobias_Madsen_CV.pdf",
-                mime="application/octet-stream")
-
-with front_col2:
-    st.title("👋 Hi, I'm Tobias!")
-    st.subheader("Student and Data Science Enthusiast")
-    st.markdown("I am a student at Copenhagen Business School (CBS) and I am currently studying my bachelor's degree in Business Administration and Digital Management. I am passionate about data science and I am currently looking for a student job in the field. I am a curious person and I am not afraid to take on new challenges")
+st.title("👋 Hi, I'm Tobias!")
+st.subheader("Student and Data Science Enthusiast")
+st.markdown("I am a student at Copenhagen Business School (CBS) and I am currently studying my bachelor's degree in Business Administration and Digital Management. I am passionate about data science and I am currently looking for a student job in the field. I am a curious person and I am not afraid to take on new challenges")
 
 selected = option_menu(
     menu_title= None, 
     options= ["About me", 'Projects', 'Contact me'],
-    icons=['file-person', 'code-slash', "person-lines-fill"], menu_icon="cast", default_index=0, orientation='horizontal') # Icons from https://icons.getbootstrap.com/
+    icons=['file-person', 'code-slash', "person-lines-fill"], menu_icon="cast", default_index=1, orientation='horizontal') # Icons from https://icons.getbootstrap.com/
 
 
 if selected == "About me":
