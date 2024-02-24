@@ -13,6 +13,13 @@ st.set_page_config(
         "About": "This my portfolio website, where you can learn more about me and my projects. Feel free to reach out to me if you have any questions or want to connect!",
     })
 
+hide_decoration_bar_style = '''
+<style>
+    header {visibility: hidden;}
+</style>
+'''
+st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
+
 
 #front_col1, front_col2 = st.columns([1,2])
 # with front_col1:
