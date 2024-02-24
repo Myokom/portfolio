@@ -26,7 +26,7 @@ st.set_page_config(
 #         btn = st.download_button(
 #                 label="📄 Download CV",
 #                 data=file,
-#                 file_name="Tobias_Madsen_CV.pdf",
+#                 file_name="Tobias_CV.pdf",
 #                 mime="application/octet-stream")
 #
 #with front_col2:
@@ -81,6 +81,7 @@ if selected == "About me":
         """)        
         st.write("🗓️ Sep 2021 – Jun 2024")
         st.write("📍 Copenhagen, Denmark")
+        st.write("🔗 [Read more at the study programme here on CBS' website](https://www.cbs.dk/en/study/bachelor/bsc-in-business-administration-and-digital-management)")
 
     with exp1_col2:
         st.image("images/CBSlogo_rgb_blue.png", use_column_width="auto")
